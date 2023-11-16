@@ -16,3 +16,15 @@ test("should return 'Hello, my friend.'", () => {
 
     expect(result).toEqual('Hello, my friend.')
 })
+
+test("should return 'Hello, my friend.'", () => {
+    const result = greet("")
+
+    expect(result).toEqual('Hello, my friend.')
+})
+
+test("should return 'Hello, my friend.'", () => {
+    const result = greet('')
+
+    expect(result).toEqual('Hello, my friend.')
+})
