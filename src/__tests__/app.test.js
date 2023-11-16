@@ -28,3 +28,9 @@ test("should return 'Hello, my friend.'", () => {
 
     expect(result).toEqual('Hello, my friend.')
 })
+
+test("should return 'HELLO, JERRY!.'", () => {
+    const result = greet('JERRY')
+
+    expect(result).toEqual('HELLO, JERRY!')
+})
