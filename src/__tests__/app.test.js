@@ -5,3 +5,8 @@ test('should return "Hello name"', () => {
 
     expect(result).toEqual('Hello, Luca.')
 })
+
+test("should return 'Hello, my friend.'", () => {
+    const result = greet()
+    expect(result).toEqual('Hello, my friend.')
+})
