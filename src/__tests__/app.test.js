@@ -55,3 +55,10 @@ test("should return 'Hello, Amy, Brian, Maxime, and Charlotte.'",() =>{
 
     expect(result).toEqual('Hello, Amy, Brian, Maxime, and Charlotte.');
 })
+
+test("should return 'Hello, Amy and Charlotte. AND HELLO BRIAN !'",() =>{
+    const names = ['Amy', 'BRIAN', 'Charlotte']
+    const result = greet(names)
+
+    expect(result).toEqual('Hello, Amy and Charlotte. AND HELLO BRIAN !');
+})

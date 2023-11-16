@@ -1,7 +1,10 @@
 function greet(name) {
     let result = 'Hello, '
     if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.'
-    if (Array.isArray(name)) return greetArray(name) 
+    if (Array.isArray(name)) {
+        if (isMixedCaseArray(name)) return mixedCaseArray(name);
+        return greetArray(name);
+    }
     if (isInUpperCase(name)) return `HELLO, ${name}!`
     return `Hello, ${name}.`
 }
@@ -15,6 +18,10 @@ function isNullUndefinedOrEmpty(name) {
 function isInUpperCase(name) {
     return name === name.toUpperCase()
 }
+function isMixedCaseArray(names) {
+    return names.some(name => !isInUpperCase(name)) && names.some(isInUpperCase);
+}
+
 
 function greetArray(names){
     let defaultValueArray = 'Hello, '
@@ -30,6 +37,25 @@ function greetArray(names){
             }
             return result
         }
+}
+function mixedCaseArray(names, language) {
+    const normalNames = [];
+    const uppercaseNames = [];
+
+    // Séparer les noms en deux catégories
+    names.forEach(name => {
+        if (name === name.toUpperCase()) {
+            uppercaseNames.push(name);
+        } else {
+            normalNames.push(name);
+        }
+    });
+
+    // Construire les salutations pour les deux catégories
+    const normalGreeting = `Hello, ${normalNames.join(' and ')}.`;
+    const uppercaseGreeting = `AND HELLO ${uppercaseNames.join(' ')} !`;
+
+    return `${normalGreeting} ${uppercaseGreeting}`;
 }
 
 module.exports = greet
