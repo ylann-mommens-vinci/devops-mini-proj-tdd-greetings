@@ -1,6 +1,19 @@
 function greet(name) {
+    let result = 'Hello, '
     if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.'
-    if (Array.isArray(name)) return `Hello, ${name[0]} and ${name[1]}.`
+    if (Array.isArray(name)){
+        if (name.length === 2) return `Hello, ${name[0]} and ${name[1]}.`
+        if (name.length > 2) {
+            for (let i = 0; i < name.length; i++) {
+                if (i === name.length - 1) {
+                    result += `and ${name[i]}.`
+                } else {
+                    result += `${name[i]}, `
+                }
+            }
+            return result
+        }
+    } 
     if (isInUpperCase(name)) return `HELLO, ${name}!`
     return `Hello, ${name}.`
 }
