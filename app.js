@@ -2,6 +2,9 @@ function greet(name) {
     let result = 'Hello, '
     if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.'
     if (Array.isArray(name)) {
+        if (['fr', 'en', 'nl'].includes(name[name.length - 1])){
+            return `Bonjour, ${name.slice(0, name.length - 1).join(' et ')}.`
+        }
         if (isMixedCaseArray(name)) return mixedCaseArray(name);
         return greetArray(name);
     }
