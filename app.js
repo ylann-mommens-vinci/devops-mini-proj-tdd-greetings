@@ -1,25 +1,26 @@
 function greet(name) {
-    if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.'
+    if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.';
     if (Array.isArray(name)) {
         if (isMixedCaseArray(name)) return mixedCaseArray(name);
         return greetArray(name);
     }
-    if (isInUpperCase(name)) return `HELLO, ${name}!`
-    return `Hello, ${name}.`
+    if (isInUpperCase(name)) return `HELLO, ${name}!`;
+    return `Hello, ${name}.`;
 }
 
 function isNullUndefinedOrEmpty(name) {
     return name === null || name === undefined || name === '';
 }
 function isInUpperCase(name) {
-    return name === name.toUpperCase()
+    return name === name.toUpperCase();
 }
 function isMixedCaseArray(names) {
-    return names.some(name => !isInUpperCase(name)) && names.some(isInUpperCase);
+    return (
+        names.some((name) => !isInUpperCase(name)) && names.some(isInUpperCase)
+    );
 }
 
-
-function greetArray(names){
+function greetArray(names) {
     const lastName = names.pop();
     return `Hello, ${names.join(', ')} and ${lastName}.`;
 }
@@ -29,7 +30,7 @@ function mixedCaseArray(names) {
     const uppercaseNames = [];
 
     // Séparer les noms en deux catégories
-    names.forEach(name => {
+    names.forEach((name) => {
         if (name === name.toUpperCase()) {
             uppercaseNames.push(name);
         } else {
@@ -44,4 +45,4 @@ function mixedCaseArray(names) {
     return `${normalGreeting} ${uppercaseGreeting}`;
 }
 
-module.exports = greet
+export default greet;
