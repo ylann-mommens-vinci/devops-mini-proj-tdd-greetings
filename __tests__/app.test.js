@@ -46,14 +46,14 @@ test("should return 'Hello, Amy, Brian, and Charlotte.'",() =>{
     const names = ['Amy', 'Brian', 'Charlotte']
     const result = greet(names)
 
-    expect(result).toEqual('Hello, Amy, Brian, and Charlotte.');
+    expect(result).toEqual('Hello, Amy, Brian and Charlotte.');
 })
 
-test("should return 'Hello, Amy, Brian, Maxime, and Charlotte.'",() =>{
+test("should return 'Hello, Amy, Brian, Maxime and Charlotte.'",() =>{
     const names = ['Amy', 'Brian', 'Maxime','Charlotte']
     const result = greet(names)
 
-    expect(result).toEqual('Hello, Amy, Brian, Maxime, and Charlotte.');
+    expect(result).toEqual('Hello, Amy, Brian, Maxime and Charlotte.');
 })
 
 test("should return 'Hello, Amy and Charlotte. AND HELLO BRIAN !'",() =>{
