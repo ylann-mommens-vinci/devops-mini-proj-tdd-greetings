@@ -1,16 +1,24 @@
 function greet(name) {
     if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.';
     if (Array.isArray(name)) {
-        if (name[name.length - 1] === 'fr'){
-            name.pop();
-            const lastName = (name.length > 1) ? ` et ${name.pop()}` : '';
-            return `Bonjour ${name.join(', ')}${lastName}.`;
-        }
+        if (isToTranslate(name[name.length - 1])) return greetTranslate(name);
         if (isMixedCaseArray(name)) return mixedCaseArray(name);
         return greetArray(name);
     }
     if (isInUpperCase(name)) return `HELLO, ${name}!`;
     return `Hello, ${name}.`;
+}
+
+function isToTranslate(language) {
+    return language === 'fr';
+}
+
+function greetTranslate(name) {
+    const language = name.pop();
+    if (language === 'fr'){
+        const lastName = (name.length > 1) ? ` et ${name.pop()}` : '';
+        return `Bonjour ${name.join(', ')}${lastName}.`;
+    }
 }
 
 function isNullUndefinedOrEmpty(name) {
