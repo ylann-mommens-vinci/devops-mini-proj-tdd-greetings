@@ -10,7 +10,7 @@ function greet(name) {
 }
 
 function isToTranslate(language) {
-    return language === 'fr' || language === 'en';
+    return language === 'fr' || language === 'en' || language === 'nl';
 }
 
 function greetTranslate(name) {
@@ -22,6 +22,10 @@ function greetTranslate(name) {
     if (language === 'en'){
         const lastName = (name.length > 1) ? ` and ${name.pop()}` : '';
         return `Hello ${name.join(', ')}${lastName}.`;
+    }
+    if (language === 'nl'){
+        const lastName = (name.length > 1) ? ` en ${name.pop()}` : '';
+        return `Hallo ${name.join(', ')}${lastName}.`;
     }
 }
 

@@ -90,3 +90,11 @@ test("should return 'Hello Kratos and Thanathos.'", () => {
 
     expect(result).toEqual('Hello Kratos and Thanathos.');
 });
+
+test("should return 'Hallo Kratos en Thanathos.'", () => {
+    const names = ['Kratos', 'Thanathos', 'nl'];
+
+    const result = greet(names);
+
+    expect(result).toEqual('Hallo Kratos en Thanathos.');
+});
