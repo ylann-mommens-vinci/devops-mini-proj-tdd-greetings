@@ -1,6 +1,9 @@
 function greet(name) {
     if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.';
     if (Array.isArray(name)) {
+        if (name[name.length - 1] === 'fr'){
+            return `Bonjour ${name[0]} et ${name[1]}.`;
+        }
         if (isMixedCaseArray(name)) return mixedCaseArray(name);
         return greetArray(name);
     }
