@@ -15,16 +15,16 @@ function isToTranslate(language) {
 
 function greetTranslate(name) {
     const language = name.pop();
-    if (language === 'fr'){
-        const lastName = (name.length > 1) ? ` et ${name.pop()}` : '';
+    if (language === 'fr') {
+        const lastName = name.length > 1 ? ` et ${name.pop()}` : '';
         return `Bonjour ${name.join(', ')}${lastName}.`;
     }
-    if (language === 'en'){
-        const lastName = (name.length > 1) ? ` and ${name.pop()}` : '';
+    if (language === 'en') {
+        const lastName = name.length > 1 ? ` and ${name.pop()}` : '';
         return `Hello ${name.join(', ')}${lastName}.`;
     }
-    if (language === 'nl'){
-        const lastName = (name.length > 1) ? ` en ${name.pop()}` : '';
+    if (language === 'nl') {
+        const lastName = name.length > 1 ? ` en ${name.pop()}` : '';
         return `Hallo ${name.join(', ')}${lastName}.`;
     }
 }
