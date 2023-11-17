@@ -12,6 +12,8 @@
         "requireConfigFile": false
     },
     "rules": {
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "semi": ["error", "always"],
+        "semi-style": ["error", "last"]
     }
 }
