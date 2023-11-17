@@ -2,7 +2,9 @@ function greet(name) {
     if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.';
     if (Array.isArray(name)) {
         if (name[name.length - 1] === 'fr'){
-            return `Bonjour ${name[0]} et ${name[1]}.`;
+            name.pop();
+            const lastName = (name.length > 1) ? ` et ${name.pop()}` : '';
+            return `Bonjour ${name.join(', ')}${lastName}.`;
         }
         if (isMixedCaseArray(name)) return mixedCaseArray(name);
         return greetArray(name);
