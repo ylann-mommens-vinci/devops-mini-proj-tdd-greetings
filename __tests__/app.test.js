@@ -1,4 +1,4 @@
-import greet from '../app.js';
+const greet = require('../app.js');
 
 test('should return "Hello name"', () => {
     const result = greet('Luca');

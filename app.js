@@ -45,4 +45,4 @@ function mixedCaseArray(names) {
     return `${normalGreeting} ${uppercaseGreeting}`;
 }
 
-export default greet;
+module.exports = greet;
