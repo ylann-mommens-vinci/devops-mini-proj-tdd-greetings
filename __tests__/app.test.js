@@ -82,3 +82,11 @@ test("should return 'Bonjour Marie.'", () => {
 
     expect(result).toEqual('Bonjour Marie.');
 });
+
+test("should return 'Hello Kratos and Thanathos.'", () => {
+    const names = ['Kratos', 'Thanathos', 'en'];
+
+    const result = greet(names);
+
+    expect(result).toEqual('Hello Kratos and Thanathos.');
+});
