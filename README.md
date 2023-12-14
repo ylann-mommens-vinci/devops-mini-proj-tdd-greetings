@@ -97,4 +97,5 @@ Nous devriez déjà ajouter le programme secure_app dans le dossier de notre pro
 - Est ce que ce programme est compatible avec notre projet ?
 - Quelles sont les dépendances de ce programme ?
 - Comment automatiser les tests de sécurité ?
+- À quelle étape devrait-on l'executer dans la pipeline ?
 ```
