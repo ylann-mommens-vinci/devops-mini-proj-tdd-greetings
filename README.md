@@ -46,23 +46,24 @@ Liens utiles:
 ```bash
 Ce script constitue une action GitHub qui s'active automatiquement lorsqu'une nouvelle pull request est ouverte ou modifiée. Voici les étapes qu'il entreprend :
 1. Checkout du code pour récupérer le code source de l'environnement d'éxécution (pour que le code de la pull request soit disponible soit disponible dans les étpes suivantes).
-2. Installation des dépendances du projet.
-3. Informe l'utilisateur que la pipeline a commencé.
-4. Formate le code avec Prettier.
-5. Lint le code avec ESLint.
-6. Teste le code et le taux de coverage avec Jest.
-7. Build le code avec Webpack.
-8. Informe l'utilisateur que la pipeline est terminée.
-9. Affiche un message de succès.
+2. Setup la version de Node.js.
+3. Installation des dépendances du projet.
+4. Informe l'utilisateur que la pipeline a commencé.
+5. Formate le code avec Prettier.
+6. Lint le code avec ESLint.
+7. Teste le code et le taux de coverage avec Jest.
+8. Build le code avec Webpack.
+9. Informe l'utilisateur que la pipeline est terminée.
+10. Affiche un message de succès.
 ```
 
 - En particulier : à quoi sert le “on” ? dans votre fichier YML ? Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ?
 
 ```bash
-Le "on" est l'élément qui permet de définir les événements qui déclencheront l'action.
+Le "on" est l'élément qui permet de définir les événements qui déclencheront l'action (trigger).
 "on push" déclenche l'action lorsqu'un push est effectué sur la branche principale.
 "on pull request" déclenche l'action lorsqu'une pull request est ouverte ou éditée.
-Pour un développeur junior, nous conseillerions plus "on pull request" car cela permet de tester le code avant de le merger sur la branche principale. Cele leurs permettra de corriger les erreurs avant de merger le code.
+Pour un développeur junior, nous conseillerions plus "on pull request" car cela permet de tester le code avant de le merger sur la branche principale. Cele leurs permettra de corriger les erreurs et d'avoir la review de son code de la part d'un senior ou autre avant de merger le code.
 ```
 
 - Quelle est la différence entre run et run_on ? Expliquez par rapport à votre pipeline.
@@ -82,8 +83,9 @@ On utilise "run" pour éxécuter une commande dans l'environnement d'éxécution
 - Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline.
 
 ```bash
-Alors oui, on peut intervertir les étapes dans notre pipeline. Cependant, il faut faire attention à l'ordre dans lequel on les intervertit. 
+Alors oui, on peut intervertir certaines étapes dans notre pipeline. Cependant, il faut faire attention à l'ordre dans lequel on les intervertit. 
 Par exemple, on ne peut pas intervertir les étapes d'installation des dépendances et de build car le build a besoin des dépendances pour fonctionner.
+Mais on pourrait intervertir les checks de prettier et lint. Ou des ces derniers avec l'étape des tests. Cela n'aurait pas d'impact.
 ```
 
 - Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ? Quelles questions devriez-vous vous poser ?
