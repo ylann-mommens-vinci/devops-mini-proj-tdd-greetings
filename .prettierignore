@@ -1,4 +1,2 @@
-node_modules
-.eslintignore
-.gitignore
-.prettierignore
+dist
+README.md

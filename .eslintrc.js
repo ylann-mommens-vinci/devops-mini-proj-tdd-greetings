@@ -26,7 +26,9 @@ module.exports = {
     parserOptions: {
         ecmaVersion: "latest",
     },
-    rules: {"indent": ["error", 4],
-        "semi": ["error", "always"],
-        "semi-style": ["error", "last"]},
+    rules: {
+        indent: ["error", 4],
+        semi: ["error", "always"],
+        "semi-style": ["error", "last"],
+    },
 };
