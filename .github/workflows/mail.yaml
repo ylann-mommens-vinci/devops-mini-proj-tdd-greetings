@@ -16,7 +16,7 @@ jobs:
                   node-version: 18
 
             - name: Install depencies
-              run: npm i
+              run: npm install
 
             - name: Starting pipeline
               run: echo "Pipeline started at $(date)"
