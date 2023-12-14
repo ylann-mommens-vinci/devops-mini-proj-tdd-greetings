@@ -65,5 +65,6 @@ function mixedCaseArray(names) {
 
     return `${normalGreeting} ${uppercaseGreeting}`;
 }
+// test
 
 module.exports = greet;
