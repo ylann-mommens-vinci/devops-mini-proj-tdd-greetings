@@ -6,7 +6,7 @@
     "scripts": {
         "start": "nodemon ./app.js",
         "test": "jest --watch",
-        "lint": "eslint ./**",
+        "lint": "eslint .",
         "lint:fix": "eslint --fix ./**",
         "prettier": "prettier ./** --check",
         "prettier:fix": "prettier ./** --write",
