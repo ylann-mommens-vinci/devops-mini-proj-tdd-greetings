@@ -1,5 +1,5 @@
 function greet(name) {
-    if (isNullUndefinedOrEmpty(name)) return 'Hello, my friend.';
+    if (isNullUndefinedOrEmpty(name)) return "Hello, my friend.";
     if (Array.isArray(name)) {
         if (isToTranslate(name[name.length - 1])) return greetTranslate(name);
         if (isMixedCaseArray(name)) return mixedCaseArray(name);
@@ -10,27 +10,27 @@ function greet(name) {
 }
 
 function isToTranslate(language) {
-    return language === 'fr' || language === 'en' || language === 'nl';
+    return language === "fr" || language === "en" || language === "nl";
 }
 
 function greetTranslate(name) {
     const language = name.pop();
-    if (language === 'fr') {
-        const lastName = name.length > 1 ? ` et ${name.pop()}` : '';
-        return `Bonjour ${name.join(', ')}${lastName}.`;
+    if (language === "fr") {
+        const lastName = name.length > 1 ? ` et ${name.pop()}` : "";
+        return `Bonjour ${name.join(", ")}${lastName}.`;
     }
-    if (language === 'en') {
-        const lastName = name.length > 1 ? ` and ${name.pop()}` : '';
-        return `Hello ${name.join(', ')}${lastName}.`;
+    if (language === "en") {
+        const lastName = name.length > 1 ? ` and ${name.pop()}` : "";
+        return `Hello ${name.join(", ")}${lastName}.`;
     }
-    if (language === 'nl') {
-        const lastName = name.length > 1 ? ` en ${name.pop()}` : '';
-        return `Hallo ${name.join(', ')}${lastName}.`;
+    if (language === "nl") {
+        const lastName = name.length > 1 ? ` en ${name.pop()}` : "";
+        return `Hallo ${name.join(", ")}${lastName}.`;
     }
 }
 
 function isNullUndefinedOrEmpty(name) {
-    return name === null || name === undefined || name === '';
+    return name === null || name === undefined || name === "";
 }
 function isInUpperCase(name) {
     return name === name.toUpperCase();
@@ -43,7 +43,7 @@ function isMixedCaseArray(names) {
 
 function greetArray(names) {
     const lastName = names.pop();
-    return `Hello, ${names.join(', ')} and ${lastName}.`;
+    return `Hello, ${names.join(", ")} and ${lastName}.`;
 }
 
 function mixedCaseArray(names) {
@@ -60,8 +60,8 @@ function mixedCaseArray(names) {
     });
 
     // Construire les salutations pour les deux catégories
-    const normalGreeting = `Hello, ${normalNames.join(' and ')}.`;
-    const uppercaseGreeting = `AND HELLO ${uppercaseNames.join(' ')} !`;
+    const normalGreeting = `Hello, ${normalNames.join(" and ")}.`;
+    const uppercaseGreeting = `AND HELLO ${uppercaseNames.join(" ")} !`;
 
     return `${normalGreeting} ${uppercaseGreeting}`;
 }

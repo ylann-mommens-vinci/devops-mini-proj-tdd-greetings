@@ -1,2 +1,4 @@
 # Dependency directories
 node_modules/
+# ignore the specific packages versions installed by the developper
+package-lock.json
