@@ -1,5 +1,5 @@
 TN:
-SF:app.js
+SF:src\app.js
 FN:1,greet
 FN:12,isToTranslate
 FN:16,greetTranslate
