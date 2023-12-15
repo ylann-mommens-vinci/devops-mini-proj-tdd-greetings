@@ -65,6 +65,6 @@ function mixedCaseArray(names) {
 
     return `${normalGreeting} ${uppercaseGreeting}`;
 }
-// Salut ! Soyez gentils sur la note ;)
+// Salut ! Soyez gentils sur la note SVP ;)
 
 module.exports = greet;
